@@ -1,0 +1,18 @@
+meta:
+  id: "proyecto-demo-v1"
+  version: "0.1.0"
+  owner: "tu-usuario"
+
+config:
+  dynamic_source_bias: 1.5
+  pruning_threshold: 0.3
+
+# Definimos una fuente estática de prueba
+sources:
+  - id: "manual-instrucciones"
+    type: "STATIC_FILE"
+    path: "README.md" # Usaremos el README del mismo repo como prueba
+    trust_level: 1.0
+
+benchmarks:
+  - question: "¿De qué trata este proyecto?"
