@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "engine_version": "v1.1-cypher-snapshot",
+    "timestamp": "2025-12-24T21:11:27.544700",
+    "execution_id": "run-20251224_211127",
+    "active_models": {
+      "embedding_chunking": "huggingface/all-MiniLM-L6-v2",
+      "llm_evaluator": "Modelo LLM (Pendiente)",
+      "graph_pruner": "Algoritmo de Poda (Pendiente)",
+      "search_engine": "Hybrid Search (Pendiente)"
+    }
+  },
+  "evolution_metrics": {
+    "sources_configured": 2,
+    "benchmarks_run": 2,
+    "status": "SUCCESS"
+  },
+  "changelog_summary": [
+    "Ciclo completo con Snapshot de Grafo."
+  ],
+  "graph_snapshot": {
+    "file_path": "snapshots/graph_20251224_211127.cypher",
+    "vector_dim": 384
+  }
+}
