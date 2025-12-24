@@ -7,12 +7,18 @@ config:
   dynamic_source_bias: 1.5
   pruning_threshold: 0.3
 
-# Definimos una fuente estática de prueba
 sources:
   - id: "manual-instrucciones"
     type: "STATIC_FILE"
-    path: "README.md" # Usaremos el README del mismo repo como prueba
+    path: "README.md" 
     trust_level: 1.0
+
+  # Nueva fuente para probar el código 1.3
+  - id: "precio-bitcoin-api"
+    type: "DYNAMIC_API"
+    endpoint: "https://dolarapi.com/v1/dolares/blue"
+    trust_level: 0.9
+
 
 benchmarks:
   - question: "¿De qué trata este proyecto?"
