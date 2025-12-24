@@ -17,7 +17,8 @@ sources:
   - id: "precio-bitcoin-api"
     type: "DYNAMIC_API"
     endpoint: "https://dolarapi.com/v1/dolares/blue"
-    trust_level: 0.9
+    trust_level: 1.5 # Bias alto para que prefiera este dato
+    update_frequency: "1h"
 
 
 benchmarks:
