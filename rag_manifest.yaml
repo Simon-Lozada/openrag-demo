@@ -1,11 +1,23 @@
 meta:
   id: "proyecto-demo-v1"
   version: "0.1.0"
-  owner: "tu-usuario"
+  owner: "tu-usuario" # <--- RECUERDA PONER TU USUARIO REAL AQUÍ SI AÚN NO LO HAS HECHO
 
 config:
   dynamic_source_bias: 1.5
   pruning_threshold: 0.3
+
+# Definición de la estructura del conocimiento (Lo que faltaba)
+ontology:
+  entities:
+    - name: "Concepto"
+      description: "Ideas generales extraídas del manual."
+    - name: "Cotizacion"
+      description: "Valores monetarios extraídos de APIs financieras."
+  relations:
+    - source: "Concepto"
+      target: "Concepto"
+      label: "RELACIONADO_CON"
 
 sources:
   - id: "manual-instrucciones"
@@ -13,13 +25,14 @@ sources:
     path: "README.md" 
     trust_level: 1.0
 
-  # Nueva fuente para probar el código 1.3
-  - id: "precio-bitcoin-api"
+  # Fuente Dinámica: Dólar Blue
+  - id: "dolar-blue-api"
     type: "DYNAMIC_API"
     endpoint: "https://dolarapi.com/v1/dolares/blue"
-    trust_level: 1.5 # Bias alto para que prefiera este dato
+    trust_level: 1.5
     update_frequency: "1h"
-
 
 benchmarks:
   - question: "¿De qué trata este proyecto?"
+  - question: "¿A cuánto está el dólar blue para la venta?" # Agregué esta para probar la API
+
