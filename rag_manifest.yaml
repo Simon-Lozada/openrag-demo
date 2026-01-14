@@ -27,6 +27,14 @@ sources:
   trust_level: 1.5
   description: "Valores actualizados de cotización para la compra y venta del Dólar Blue en Argentina. Incluye precio de venta y fecha de actualización."
   update_frequency: 1h
+  transformation_template: |
+    Reporte de Cotización del Dólar Blue:
+    Moneda: {{ moneda }}
+    Casa: {{ casa }}
+    Nombre: {{ nombre }}
+    Compra: {{ compra }} pesos
+    Venta: {{ venta }} pesos
+    Fecha de Actualización: {{ fechaActualizacion }}
 - id: dollar-dedollarization-es-pdf
   type: STATIC_FILE
   path: data/dollar_dedollarization_es.pdf
