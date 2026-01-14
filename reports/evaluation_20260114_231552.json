@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "engine_version": "v1.1-modular-arch",
+    "timestamp": "2026-01-14T23:15:52.936401",
+    "execution_id": "run-20260114_231552",
+    "active_models": {
+      "embedding_chunking": "huggingface/all-MiniLM-L6-v2",
+      "llm_evaluator": "Modelo LLM (GPT-4o / Gemini 1.5 - Pendiente)",
+      "graph_pruner": "Algoritmo de Poda (Centralidad/Utility - Pendiente)",
+      "search_engine": "Hybrid Search (Vector + Graph Traversal - Pendiente)"
+    }
+  },
+  "evolution_metrics": {
+    "sources_configured": 3,
+    "benchmarks_run": 0,
+    "status": "SUCCESS"
+  },
+  "changelog_summary": [
+    "✅ Ingesta finalizada.",
+    "🧠 Modelos declarados en metadatos (LLM, Poda, Search).",
+    "📡 Datos sincronizados en Neo4j."
+  ],
+  "graph_snapshot": {
+    "note": "Graph state persisted in Neo4j AuraDB",
+    "vector_dim": 384
+  }
+}
