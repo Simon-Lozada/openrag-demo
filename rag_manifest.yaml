@@ -40,6 +40,11 @@ sources:
   path: data/dollar_dedollarization_es.pdf
   trust_level: 1.0
   description: "Informe económico sobre la desdolarización global."
+- id: cold-layer-contributions
+  type: CONTRIBUTION_QUEUE
+  path: data/contributions/pending_contributions.json
+  trust_level: 0.5
+  description: "Contribuciones de expertos del dominio pendientes de validación."
 benchmarks:
 - question: ¿De qué trata este proyecto?
 - question: ¿Reporte de Cotización del Dólar Blue?
