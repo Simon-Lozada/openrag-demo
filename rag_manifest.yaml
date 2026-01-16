@@ -3,8 +3,14 @@ meta:
   version: 0.1.0
   owner: tu-usuario
 config:
-  dynamic_source_bias: 1.5
-  pruning_threshold: 0.3
+  embedding_model: "all-MiniLM-L6-v2"
+  embedding_dim: 384
+  database:
+    type: "local"  # Opción: "local" o "aura"
+    # uri: "neo4j+s://..." # Opcional si es "aura"
+    # user: "neo4j"
+    # password_secret: "NEO4J_AURA_PASSWORD"
+threshold: 0.3
 ontology:
   entities:
   - name: Concepto
@@ -48,3 +54,14 @@ sources:
 benchmarks:
 - question: ¿De qué trata este proyecto?
 - question: ¿Reporte de Cotización del Dólar Blue?
+tools:
+- name: calculator
+  type: CUSTOM
+  module: code.tools.calculator_tool
+  factory: create_calculator_tool
+- name: obsidian_search
+  type: CUSTOM
+  module: code.tools.obsidian_tool
+  factory: create_obsidian_tool
+  params:
+    vault_path: "data/vault"
