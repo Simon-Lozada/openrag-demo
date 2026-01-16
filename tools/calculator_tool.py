@@ -12,7 +12,7 @@ class Calculator:
     """
     def __init__(self):
         # Allow only numbers, basic operators, and parentheses
-        self.allowed_pattern = re.compile(r'^[0-9+\-*/().\s*%^]+$')
+        self.allowed_pattern = re.compile(r'^[0-9+*/().\s*%^-]+$')
 
     def calculate(self, expression: str) -> str:
         """
