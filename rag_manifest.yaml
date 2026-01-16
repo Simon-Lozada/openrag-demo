@@ -6,10 +6,10 @@ config:
   embedding_model: "all-MiniLM-L6-v2"
   embedding_dim: 384
   database:
-    type: "local"  # Opción: "local" o "aura"
-    # uri: "neo4j+s://..." # Opcional si es "aura"
-    # user: "neo4j"
-    # password_secret: "NEO4J_AURA_PASSWORD"
+    type: "aura"
+    uri: "NEO4J_URI"
+    user: "NEO4J_USER"
+    password_secret: "NEO4J_PASSWORD"
 threshold: 0.3
 ontology:
   entities:
