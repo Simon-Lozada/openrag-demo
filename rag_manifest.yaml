@@ -57,11 +57,11 @@ benchmarks:
 tools:
 - name: calculator
   type: CUSTOM
-  module: code.tools.calculator_tool
+  path: tools/calculator_tool.py
   factory: create_calculator_tool
 - name: obsidian_search
   type: CUSTOM
-  module: code.tools.obsidian_tool
+  module: code/tools/obsidian_tool.py
   factory: create_obsidian_tool
   params:
     vault_path: "data/vault"
