@@ -7,7 +7,7 @@ config:
   embedding_dim: 384
   database:
     type: "aura"
-    uri: "neo4j+s://6929e09e.databases.neo4j.io"
+    uri: "neo4j+s://25c8a5b1.databases.neo4j.io:7687"
     user: "neo4j"
     password_secret: "NEO4J_PASSWORD"
 threshold: 0.3
