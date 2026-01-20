@@ -3,14 +3,22 @@ meta:
   version: 0.1.0
   owner: tu-usuario
 config:
+  # Configuracion del modelo de embedding
   embedding_model: "all-MiniLM-L6-v2"
   embedding_dim: 384
-  database:
-    type: "aura"
+
+  # Modelo para la extracion de conceptos e informacion 
+  extraction_model: "gemini" # Opciones disponibles: "keybert" o "gemini"
+
+  # configuracion para la base de datos las opciones
+  database: 
+    type: "aura" # Opciones disponibles: aura, base de datos persistente (con los datos de coneccicon, y password en local) y local, base de datos efimera
     uri: "neo4j+s://25c8a5b1.databases.neo4j.io:7687"
     user: "neo4j"
     password_secret: "NEO4J_PASSWORD"
+
 threshold: 0.3
+
 ontology:
   entities:
   - name: Concepto
@@ -21,19 +29,16 @@ ontology:
   - source: Concepto
     target: Concepto
     label: RELACIONADO_CON
+
 sources:
-- id: manual-instrucciones
-  type: STATIC_FILE
-  path: README.md
-  trust_level: 1.0
-  description: "Información general y técnica sobre el proyecto OpenRAG."
+# api dinamica del precio del dolar 
 - id: dolar-blue-api
-  type: DYNAMIC_API
-  endpoint: https://dolarapi.com/v1/dolares/blue
-  trust_level: 1.5
+  type: DYNAMIC_API # define si el dato es fijo o dinamico 
+  endpoint: https://dolarapi.com/v1/dolares/blue # ruta de los datos
+  trust_level: 1.5 # nivel de confianza en la funete de informaicon
   description: "Valores actualizados de cotización para la compra y venta del Dólar Blue en Argentina. Incluye precio de venta y fecha de actualización."
   update_frequency: 1h
-  transformation_template: |
+  transformation_template: | # Estandar jinja2 
     Reporte de Cotización del Dólar Blue:
     Moneda: {{ moneda }}
     Casa: {{ casa }}
@@ -41,16 +46,22 @@ sources:
     Compra: {{ compra }} pesos
     Venta: {{ venta }} pesos
     Fecha de Actualización: {{ fechaActualizacion }}
+
+# PDF fijo
 - id: dollar-dedollarization-es-pdf
-  type: STATIC_FILE
-  path: data/dollar_dedollarization_es.pdf
-  trust_level: 1.0
+  type: STATIC_FILE # define si el dato es fijo o dinamico
+  path: data/dollar_dedollarization_es.pdf # ruta de los datos
+  trust_level: 1.0 # nivel de confianza en la funete de informaicon
   description: "Informe económico sobre la desdolarización global."
+
+# Capa fria, contribuciones externas
 - id: cold-layer-contributions
   type: CONTRIBUTION_QUEUE
-  path: data/contributions/pending_contributions.json
-  trust_level: 0.5
+  path: data/contributions/pending_contributions.json # ruta de los datos
+  trust_level: 0.5 # nivel de confianza en la funete de informaicon
   description: "Contribuciones de expertos del dominio pendientes de validación."
+
+# test pre definidos
 benchmarks:
 - question: ¿De qué trata este proyecto?
 - question: ¿Reporte de Cotización del Dólar Blue?
