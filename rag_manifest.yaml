@@ -13,7 +13,7 @@ config:
   # configuracion para la base de datos las opciones
   database: 
     type: "aura" # Opciones disponibles: aura, base de datos persistente (con los datos de coneccicon, y password en local) y local, base de datos efimera
-    uri: "neo4j+s://e65bda98.databases.neo4j.io:7687"
+    uri: "neo4j+s://7b3d0a97.databases.neo4j.io:7687"
     user: "neo4j"
     password_secret: "NEO4J_PASSWORD"
 
