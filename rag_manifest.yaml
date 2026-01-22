@@ -20,15 +20,36 @@ config:
 threshold: 0.3
 
 ontology:
-  entities:
+  # Definición de Nodos (La estructura de capas)
+  nodes:
+  - name: Fuente
+    description: "Origen de la verdad (API, PDF, Usuario). Posee credibilidad y temporalidad."
+  - name: Dato
+    description: "Unidad atómica de información (Hecho). Reemplaza al antiguo 'Chunk' de texto."
   - name: Concepto
-    description: Ideas generales extraídas del manual.
-  - name: Cotizacion
-    description: Valores monetarios extraídos de APIs financieras.
+    description: "Entidad del dominio (ej. 'Dólar', 'Presión'). Núcleo del grafo."
+
+  # Definición de Relaciones (El flujo lógico)
   relations:
+  - source: Fuente
+    target: Dato
+    label: CONTAINS
+    description: "Vincula un hecho con su origen. Incluye la propiedad 'location_code'."
+  
+  - source: Dato
+    target: Concepto
+    label: REFERS_TO
+    description: "Conecta un hecho con la idea que representa."
+  
   - source: Concepto
     target: Concepto
-    label: RELACIONADO_CON
+    label: RELATES_TO
+    description: "Relación semántica cualitativa entre dos conceptos."
+  
+  - source: Concepto
+    target: Concepto
+    label: MATH_RELATION
+    description: "Relación cuantitativa o fórmula matemática entre variables."
 
 sources:
 # api dinamica del precio del dolar 
@@ -36,6 +57,7 @@ sources:
   type: DYNAMIC_API # define si el dato es fijo o dinamico 
   endpoint: https://dolarapi.com/v1/dolares/blue # ruta de los datos
   trust_level: 1.5 # nivel de confianza en la funete de informaicon
+  global_concepts: ["dolar"] # conceptos semilla iniciales para los datos provinientes de esta fuente
   description: "Valores actualizados de cotización para la compra y venta del Dólar Blue en Argentina. Incluye precio de venta y fecha de actualización."
   update_frequency: 1h
   transformation_template: | # Estandar jinja2 
@@ -50,6 +72,7 @@ sources:
 # PDF fijo
 - id: dollar-dedollarization-es-pdf
   type: STATIC_FILE # define si el dato es fijo o dinamico
+  global_concepts: ["dolar", "economia_argentina"] # conceptos semilla iniciales para los datos provinientes de esta fuente
   path: data/dollar_dedollarization_es.pdf # ruta de los datos
   trust_level: 1.0 # nivel de confianza en la funete de informaicon
   description: "Informe económico sobre la desdolarización global."
