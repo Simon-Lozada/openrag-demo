@@ -60,14 +60,12 @@ sources:
   global_concepts: ["dolar"] # conceptos semilla iniciales para los datos provinientes de esta fuente
   description: "Valores actualizados de cotización para la compra y venta del Dólar Blue en Argentina. Incluye precio de venta y fecha de actualización."
   update_frequency: 1h
-  transformation_template: | # Estandar jinja2 
-    Reporte de Cotización del Dólar Blue:
-    Moneda: {{ moneda }}
-    Casa: {{ casa }}
-    Nombre: {{ nombre }}
-    Compra: {{ compra }} pesos
-    Venta: {{ venta }} pesos
-    Fecha de Actualización: {{ fechaActualizacion }}
+  # Convertimos los datos crudos en afirmaciones lógicas completas.
+  transformation_template: |
+    Reporte oficial del Mercado Cambiario en Argentina actualizado al {{ fechaActualizacion }}.
+    El tipo de cambio financiero denominado Dólar {{ nombre }} (categoría {{ casa }}) opera en moneda {{ moneda }}.
+    Se registra un valor de compra de {{ compra }} pesos argentinos.
+    Se registra un valor de venta de {{ venta }} pesos argentinos.
 
 # PDF fijo
 - id: dollar-dedollarization-es-pdf
