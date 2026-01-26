@@ -78,10 +78,9 @@ sources:
 # Capa fria, contribuciones externas
 - id: cold-layer-contributions
   type: CONTRIBUTION_QUEUE
-  path: data/contributions/pending_contributions.json # ruta de los datos
-  trust_level: 0.5 # nivel de confianza en la funete de informaicon
-  description: "Contribuciones de expertos del dominio pendientes de validación."
-
+  path: data/contributions/pending_contributions.json
+  # trust_level: ELIMINADO (Ahora depende de cada contribuyente individualmente)
+  description: "Cola de conocimientos aportados por expertos del dominio, pendientes de validación."
 # test pre definidos
 benchmarks:
 - question: ¿De qué trata este proyecto?
