@@ -1,24 +1,26 @@
 [
-    {
-        "id": "contrib_001",
-        "contributor": "expert_user@example.com",
-        "timestamp": "2026-01-14T10:00:00Z",
-        "intent": "ADD_KNOWLEDGE",
-        "topic": "Cold Layer Protocol",
-        "payload": {
-            "text": "The Cold Layer allows domain experts to contribute knowledge without technical skills. It uses a drop box mechanism in the repository."
-        },
-        "status": "pending"
+  {
+    "id": "contrib_001_expert",
+    "contributor_id": "sarah_finance@openrag.org",
+    "trust_level": 0.9,
+    "timestamp": "2026-01-24T10:00:00Z",
+    "intent": "ADD_KNOWLEDGE",
+    "topic": "Mercado Cambiario",
+    "payload": {
+      "text": "El 'Dólar MEP' (Medio Electrónico de Pagos) es un tipo de cambio legal que se obtiene mediante la compra de bonos en pesos y su venta en dólares en el mercado local."
     },
-    {
-        "id": "contrib_002",
-        "contributor": "data_scientist@example.com",
-        "timestamp": "2026-01-14T11:30:00Z",
-        "intent": "CORRECTION",
-        "topic": "Graph Pruning",
-        "payload": {
-            "text": "Graph pruning should be performed using VOI (Value of Information) metrics rather than just connection density."
-        },
-        "status": "pending"
-    }
+    "status": "pending"
+  },
+  {
+    "id": "contrib_002_novice",
+    "contributor_id": "new_user_123@gmail.com",
+    "trust_level": 0.2,
+    "timestamp": "2026-01-24T12:30:00Z",
+    "intent": "ADD_KNOWLEDGE",
+    "topic": "Rumores",
+    "payload": {
+      "text": "Dicen que el dólar blue va a bajar a 500 pesos mañana por una intervención secreta."
+    },
+    "status": "pending"
+  }
 ]
