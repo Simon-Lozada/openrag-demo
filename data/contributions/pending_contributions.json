@@ -22,5 +22,17 @@
       "text": "Dicen que el dólar blue va a bajar a 500 pesos mañana por una intervención secreta."
     },
     "status": "pending"
+  },
+  {
+    "id": "contrib_003_expert_update",
+    "contributor_id": "sarah_finance@openrag.org",
+    "trust_level": 0.9,
+    "timestamp": "2026-01-25T09:15:00Z",
+    "intent": "ADD_KNOWLEDGE",
+    "topic": "Bonos Soberanos",
+    "payload": {
+      "text": "El bono AL30 es el instrumento más utilizado para la operatoria de Dólar MEP debido a su alta liquidez y plazo de liquidación de 24hs."
+    },
+    "status": "pending"
   }
 ]
