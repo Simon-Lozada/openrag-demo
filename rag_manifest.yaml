@@ -3,16 +3,20 @@ meta:
   version: 0.1.0
   owner: tu-usuario
 config:
-  # Configuracion del modelo de embedding
-  embedding_model: "all-MiniLM-L6-v2"
+config:
+  # Centralizamos las versiones exactas aquí.
+  models:
+    embedding: "all-MiniLM-L6-v2"
+    extraction: "gemini-2.0-flash-lite"    # Antes "gemini" (Ingesta rápida)
+    inference: "ggemini-2.0-flash-lite"   # Nuevo (Agente Inteligente)
+    judge: "gemini-2.0-flash-lite"                 # Nuevo (Evaluador de Calidad)
+
+  # Mantenemos la dimensión (necesaria para inicializar vectores)
   embedding_dim: 384
 
-  # Modelo para la extracion de conceptos e informacion 
-  extraction_model: "gemini" # Opciones disponibles: "keybert" o "gemini"
-
-  # configuracion para la base de datos las opciones
+  # --- Configuración de Base de Datos (Sin cambios) ---
   database: 
-    type: "aura" # Opciones disponibles: aura, base de datos persistente (con los datos de coneccicon, y password en local) y local, base de datos efimera
+    type: "aura"
     uri: "neo4j+s://7b3d0a97.databases.neo4j.io:7687"
     user: "neo4j"
     password_secret: "NEO4J_PASSWORD"
