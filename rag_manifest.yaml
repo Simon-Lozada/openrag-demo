@@ -1,4 +1,4 @@
-meta:
+gemini-2.0-flash-litemeta:
   id: proyecto-demo-v1
   version: 0.1.0
   owner: tu-usuario
@@ -7,7 +7,7 @@ config:
   models:
     embedding: "all-MiniLM-L6-v2"
     extraction: "gemini-2.0-flash-lite"    # Antes "gemini" (Ingesta rápida)
-    inference: "ggemini-2.0-flash-lite"   # Nuevo (Agente Inteligente)
+    inference: "gemini-2.0-flash-lite"   # Nuevo (Agente Inteligente)
     judge: "gemini-2.0-flash-lite"                 # Nuevo (Evaluador de Calidad)
 
   # Mantenemos la dimensión (necesaria para inicializar vectores)
