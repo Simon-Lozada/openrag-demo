@@ -3,7 +3,6 @@ meta:
   version: 0.1.0
   owner: tu-usuario
 config:
-config:
   # Centralizamos las versiones exactas aquí.
   models:
     embedding: "all-MiniLM-L6-v2"
