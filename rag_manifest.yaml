@@ -3,6 +3,9 @@ meta:
   version: 0.1.0
   owner: tu-usuario
 config:
+  threshold: 0.3
+  top_k: 3
+
   # Centralizamos las versiones exactas aquí.
   models:
     embedding: "all-MiniLM-L6-v2"
@@ -20,7 +23,7 @@ config:
     user: "neo4j"
     password_secret: "NEO4J_PASSWORD"
 
-threshold: 0.3
+
 
 ontology:
   # Definición de Nodos (La estructura de capas)
