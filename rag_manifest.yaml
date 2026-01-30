@@ -3,8 +3,9 @@ meta:
   version: 0.1.0
   owner: tu-usuario
 config:
-  threshold: 0.3
-  top_k: 3
+  threshold: 0.3 # Minimo VOI para poda
+  top_k: 3 # top embeddings arecuperar
+  semantic_merge_threshold: 0.85 #Umbral de fusión semántica
 
   # Centralizamos las versiones exactas aquí.
   models:
