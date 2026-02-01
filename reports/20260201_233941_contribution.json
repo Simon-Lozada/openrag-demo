@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "run_id": "20260201_233941",
+    "type": "contribution",
+    "executor": "OpenRAG_Orchestrator_v4.1"
+  },
+  "metrics": {
+    "summary": "contribution_cycle"
+  },
+  "data": [
+    {
+      "id": "contrib_001_expert",
+      "status": "rejected"
+    },
+    {
+      "id": "contrib_002_novice",
+      "status": "rejected"
+    },
+    {
+      "id": "contrib_003_expert_update",
+      "status": "review_needed"
+    }
+  ]
+}
