@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "run_id": "20260201_225436",
+    "type": "global_health",
+    "executor": "OpenRAG_Orchestrator_v3"
+  },
+  "metrics": {
+    "global_score": 0.7,
+    "total_benchmarks": 2,
+    "passed_benchmarks": 2,
+    "details": [
+      {
+        "benchmark": "¿Posible intervención secreta mañana en el dolar?",
+        "score": 0.7,
+        "rag_answer": "Found relevant information in the Knowledge Graph:\n[new_user_123@gmail.com (Trust: 0.2 | Score: 0.68..."
+      },
+      {
+        "benchmark": "¿Reporte de Cotización del Dólar Blue?",
+        "score": 0.7,
+        "rag_answer": "Found relevant information in the Knowledge Graph:\n[new_user_123@gmail.com (Trust: 0.2 | Score: 0.76..."
+      }
+    ]
+  },
+  "data": [
+    {
+      "benchmark": "¿Posible intervención secreta mañana en el dolar?",
+      "score": 0.7,
+      "rag_answer": "Found relevant information in the Knowledge Graph:\n[new_user_123@gmail.com (Trust: 0.2 | Score: 0.68..."
+    },
+    {
+      "benchmark": "¿Reporte de Cotización del Dólar Blue?",
+      "score": 0.7,
+      "rag_answer": "Found relevant information in the Knowledge Graph:\n[new_user_123@gmail.com (Trust: 0.2 | Score: 0.76..."
+    }
+  ]
+}
