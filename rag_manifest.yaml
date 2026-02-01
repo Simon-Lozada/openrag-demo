@@ -90,7 +90,7 @@ sources:
   description: "Cola de conocimientos aportados por expertos del dominio, pendientes de validación."
 # test pre definidos
 benchmarks:
-- question: ¿De qué trata este proyecto?
+- question: ¿Posible intervención secreta mañana en el dolar?
 - question: ¿Reporte de Cotización del Dólar Blue?
 tools:
 - name: calculator
