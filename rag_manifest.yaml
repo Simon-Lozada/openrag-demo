@@ -5,7 +5,8 @@ meta:
 config:
   threshold: 0.3 # Minimo VOI para poda
   top_k: 3 # top embeddings arecuperar
-  semantic_merge_threshold: 0.85 #Umbral de fusión semántica
+  semantic_merge_threshold: 0.85 # Umbral de fusión semántica entre conceptos
+  relevance_threshold: 0.45 # Umbral de relevancia para testear aporte
 
   # Centralizamos las versiones exactas aquí.
   models:
