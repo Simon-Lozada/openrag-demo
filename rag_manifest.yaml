@@ -90,8 +90,17 @@ sources:
   description: "Cola de conocimientos aportados por expertos del dominio, pendientes de validación."
 # test pre definidos
 benchmarks:
-- question: ¿Posible intervención secreta mañana en el dolar?
-- question: ¿Reporte de Cotización del Dólar Blue?
+  - question: "¿Posible intervención secreta mañana en el dolar?"
+    ground_truth:
+      # Estrategia 1: Respuesta Esperada Literal
+      answer: "No existe información en las fuentes oficiales sobre intervenciones secretas, hay rumores."
+
+  - question: "¿Reporte de Cotización del Dólar Blue?"
+    ground_truth:
+      # Estrategia 2: Validación por Keywords
+      keywords: ["compra", "venta", "pesos", "Blue"]
+      logic: "must_contain_all"
+      
 tools:
 - name: calculator
   type: CUSTOM
