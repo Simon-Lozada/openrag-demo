@@ -96,10 +96,10 @@ benchmarks:
       # Estrategia 1: Respuesta Esperada Literal
       answer: "No existe información en las fuentes oficiales sobre intervenciones secretas, hay rumores."
 
-  - question: "¿Reporte de Cotización del Dólar Blue?"
+  - question: "¿Qué cotización del Dolar Blue figura en el sistema?"
     ground_truth:
       # Estrategia 2: Validación por Keywords
-      keywords: ["compra", "venta", "pesos", "Blue"]
+      keywords: ["compra", "venta", "Dolar", "Blue"]
       logic: "must_contain_all"
       
 tools:
