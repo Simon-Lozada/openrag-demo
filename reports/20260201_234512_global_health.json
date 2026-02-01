@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "run_id": "20260201_234512",
+    "type": "global_health",
+    "executor": "OpenRAG_Orchestrator_v4.1"
+  },
+  "metrics": {
+    "global_score": 0,
+    "details": []
+  },
+  "data": []
+}
