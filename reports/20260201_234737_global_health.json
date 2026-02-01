@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "run_id": "20260201_234737",
+    "type": "global_health",
+    "executor": "OpenRAG_Orchestrator_v4.1"
+  },
+  "metrics": {
+    "global_score": 0.7,
+    "details": [
+      {
+        "benchmark": "\u00bfPosible intervenci\u00f3n secreta ma\u00f1ana en el dolar?",
+        "score": 0.7,
+        "rag_evidence": "\ud83d\udcc4 [new_user_123@gmail.com (Trust: 0.2 | Score: 0.68)] D\u00f3lar blue decrease to 500 pesos tomorrow due secret intervention\n   (Contexto: rumores, intervenci\u00f3n, dolar blue, mercado cambiario)\n\ud83d\udcc4 [dollar-dedollarization-es-pdf (Trust: 1.0 | Score: 0.67)] Dolar maintains a dominant role in the market, offering benefits like its use in international transactions, being a reliable store of value, providing liquidity, and appreciating during times of stress.\n   (Contexto: economia_argentina, mercado, dolar, inversores)\n\ud83d\udcc4 [dollar-dedollarization-es-pdf (Trust: 1.0 | Score: 0.64)] Desdolarizaci\u00f3n gains momentum due to concerns about dollar value, geopolitical risks, and economic sanctions, leading governments to explore alternatives.\n   (Contexto: economia_argentina, oro, desdolarizaci\u00f3n, dolar, bancos centrales)",
+        "agent_answer": "There is a rumor about a possible secret intervention in the dollar tomorrow, with the dollar blue potentially decreasing to 500 pesos [new_user_123@gmail.com].",
+        "executor_used": "GenerativeRAG_Agent",
+        "tools_used": [
+          "knowledge_base"
+        ]
+      },
+      {
+        "benchmark": "\u00bfQu\u00e9 cotizaci\u00f3n del Dolar Blue figura en el sistema?",
+        "score": 0.7,
+        "rag_evidence": "\ud83d\udcc4 [new_user_123@gmail.com (Trust: 0.2 | Score: 0.71)] D\u00f3lar blue decrease to 500 pesos tomorrow due secret intervention\n   (Contexto: rumores, intervenci\u00f3n, dolar blue, mercado cambiario)\n\ud83d\udcc4 [dolar-blue-api (Trust: 1.5 | Score: 0.67)] Dolar Blue buy price 1450, sell price 1470\n   (Contexto: dolar, dolar blue, mercado cambiario, argentina)\n\ud83d\udcc4 [dollar-dedollarization-es-pdf (Trust: 1.0 | Score: 0.63)] Dolar maintains a dominant role in the market, offering benefits like its use in international transactions, being a reliable store of value, providing liquidity, and appreciating during times of stress.\n   (Contexto: economia_argentina, mercado, dolar, inversores)",
+        "agent_answer": "The Dolar Blue buy price is 1450 and the sell price is 1470 [dolar-blue-api]. There are also rumors of a decrease to 500 pesos tomorrow due to secret intervention [new_user_123@gmail.com].",
+        "executor_used": "GenerativeRAG_Agent",
+        "tools_used": [
+          "knowledge_base"
+        ]
+      }
+    ]
+  },
+  "data": [
+    {
+      "benchmark": "\u00bfPosible intervenci\u00f3n secreta ma\u00f1ana en el dolar?",
+      "score": 0.7,
+      "rag_evidence": "\ud83d\udcc4 [new_user_123@gmail.com (Trust: 0.2 | Score: 0.68)] D\u00f3lar blue decrease to 500 pesos tomorrow due secret intervention\n   (Contexto: rumores, intervenci\u00f3n, dolar blue, mercado cambiario)\n\ud83d\udcc4 [dollar-dedollarization-es-pdf (Trust: 1.0 | Score: 0.67)] Dolar maintains a dominant role in the market, offering benefits like its use in international transactions, being a reliable store of value, providing liquidity, and appreciating during times of stress.\n   (Contexto: economia_argentina, mercado, dolar, inversores)\n\ud83d\udcc4 [dollar-dedollarization-es-pdf (Trust: 1.0 | Score: 0.64)] Desdolarizaci\u00f3n gains momentum due to concerns about dollar value, geopolitical risks, and economic sanctions, leading governments to explore alternatives.\n   (Contexto: economia_argentina, oro, desdolarizaci\u00f3n, dolar, bancos centrales)",
+      "agent_answer": "There is a rumor about a possible secret intervention in the dollar tomorrow, with the dollar blue potentially decreasing to 500 pesos [new_user_123@gmail.com].",
+      "executor_used": "GenerativeRAG_Agent",
+      "tools_used": [
+        "knowledge_base"
+      ]
+    },
+    {
+      "benchmark": "\u00bfQu\u00e9 cotizaci\u00f3n del Dolar Blue figura en el sistema?",
+      "score": 0.7,
+      "rag_evidence": "\ud83d\udcc4 [new_user_123@gmail.com (Trust: 0.2 | Score: 0.71)] D\u00f3lar blue decrease to 500 pesos tomorrow due secret intervention\n   (Contexto: rumores, intervenci\u00f3n, dolar blue, mercado cambiario)\n\ud83d\udcc4 [dolar-blue-api (Trust: 1.5 | Score: 0.67)] Dolar Blue buy price 1450, sell price 1470\n   (Contexto: dolar, dolar blue, mercado cambiario, argentina)\n\ud83d\udcc4 [dollar-dedollarization-es-pdf (Trust: 1.0 | Score: 0.63)] Dolar maintains a dominant role in the market, offering benefits like its use in international transactions, being a reliable store of value, providing liquidity, and appreciating during times of stress.\n   (Contexto: economia_argentina, mercado, dolar, inversores)",
+      "agent_answer": "The Dolar Blue buy price is 1450 and the sell price is 1470 [dolar-blue-api]. There are also rumors of a decrease to 500 pesos tomorrow due to secret intervention [new_user_123@gmail.com].",
+      "executor_used": "GenerativeRAG_Agent",
+      "tools_used": [
+        "knowledge_base"
+      ]
+    }
+  ]
+}
