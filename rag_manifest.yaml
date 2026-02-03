@@ -13,7 +13,6 @@ models:
     embedding: 
       model: "all-MiniLM-L6-v2"
       embedding_dim: 384
-
     # 1. Extracción (Ingestion): Barato y rápido, temperatura 0 para precisión
     extraction: 
       model: "gemini-2.0-flash-lite"
