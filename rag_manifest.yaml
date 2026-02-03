@@ -2,38 +2,43 @@ meta:
   id: proyecto-demo-v1
   version: 0.1.0
   owner: tu-usuario
-config:
-  threshold: 0.3 # Minimo VOI para poda
-  top_k: 3 # top embeddings arecuperar
-  semantic_merge_threshold: 0.85 # Umbral de fusión semántica entre conceptos
-  relevance_threshold: 0.45 # Umbral de relevancia para testear aporte
 
-models:
-    # 0. modelo de embedding
+config:
+  # --- Umbrales Globales ---
+  threshold: 0.3                # Mínimo VOI para poda
+  top_k: 3                      # Top embeddings a recuperar
+  semantic_merge_threshold: 0.85 # Fusión semántica
+  relevance_threshold: 0.45     # Aceptación de contribuciones
+  embedding_dim: 384            # Dimensión del vector
+
+  # --- Modelos de IA (INDENTADO DENTRO DE CONFIG) ---
+  models:
+    # 0. Modelo de embedding (Local/HuggingFace)
     embedding: 
       model: "all-MiniLM-L6-v2"
       embedding_dim: 384
-    # 1. Extracción (Ingestion): Barato y rápido, temperatura 0 para precisión
+    
+    # 1. Extracción (Ingestion): Preciso
     extraction: 
       model: "gemini-2.0-flash-lite"
       temperature: 0.0
-    # 2. Evaluación (Judge): Razonamiento medio, temperatura baja
+    
+    # 2. Evaluación (Judge): Objetivo
     evaluation: 
       model: "gemini-2.0-flash-lite"
       temperature: 0.1
-    # 3. Inferencia (Agente): Creativo y conversacional
+    
+    # 3. Inferencia (Agente): Creativo
     inference: 
       model: "gemini-2.0-flash-lite"
       temperature: 0.5
 
-
-  # --- Configuración de Base de Datos (Sin cambios) ---
+  # --- Base de Datos (INDENTADO DENTRO DE CONFIG) ---
   database: 
     type: "aura"
     uri: "neo4j+s://7b3d0a97.databases.neo4j.io:7687"
     user: "neo4j"
     password_secret: "NEO4J_PASSWORD"
-
 
 
 ontology:
