@@ -8,15 +8,25 @@ config:
   semantic_merge_threshold: 0.85 # Umbral de fusión semántica entre conceptos
   relevance_threshold: 0.45 # Umbral de relevancia para testear aporte
 
-  # Centralizamos las versiones exactas aquí.
-  models:
-    embedding: "all-MiniLM-L6-v2"
-    extraction: "gemini-2.0-flash-lite"    # Antes "gemini" (Ingesta rápida)
-    inference: "gemini-2.0-flash-lite"   # Nuevo (Agente Inteligente)
-    judge: "gemini-2.0-flash-lite"                 # Nuevo (Evaluador de Calidad)
+models:
+    # 0. modelo de embedding
+    embedding: 
+      model: "all-MiniLM-L6-v2"
+      embedding_dim: 384
 
-  # Mantenemos la dimensión (necesaria para inicializar vectores)
-  embedding_dim: 384
+    # 1. Extracción (Ingestion): Barato y rápido, temperatura 0 para precisión
+    extraction: 
+      model: "gemini-2.0-flash-lite"
+      temperature: 0.0
+    # 2. Evaluación (Judge): Razonamiento medio, temperatura baja
+    evaluation: 
+      model: "gemini-2.0-flash-lite"
+      temperature: 0.1
+    # 3. Inferencia (Agente): Creativo y conversacional
+    inference: 
+      model: "gemini-2.0-flash-lite"
+      temperature: 0.5
+
 
   # --- Configuración de Base de Datos (Sin cambios) ---
   database: 
