@@ -5,11 +5,34 @@ meta:
 
 config:
   # --- Umbrales Globales ---
-  threshold: 0.3                # Mínimo VOI para poda
-  top_k: 3                      # Top embeddings a recuperar
+  threshold: 0.3                 # Mínimo VOI para poda
+  top_k: 3                       # Top embeddings a recuperar
   semantic_merge_threshold: 0.85 # Fusión semántica
-  relevance_threshold: 0.45     # Aceptación de contribuciones
-  embedding_dim: 384            # Dimensión del vector
+  relevance_threshold: 0.45      # Aceptación de contribuciones
+  embedding_dim: 384             # Dimensión del vector
+
+  voi:
+    # A. Pesos de Inicialización Estática (Suman 1.0 idealmente)
+    # Fórmula: VOI_init = (Trust * w_trust) + (Densidad * w_density) + (Entidades * w_entity)
+    weights:
+      trust: 0.6          # Importancia de la fuente (Oficial vs Usuario)
+      density: 0.2        # Importancia de que el texto sea completo/denso
+      entities: 0.2       # Importancia de tener entidades ricas (NER)2
+
+    # B. Aprendizaje Dinámico (Descenso de Gradiente)
+    # Fórmula: Delta = learning_rate * (Juez_Score - satisfaction_threshold)
+    dynamic: # (Parámetros para maintenance.py)
+      enabled: true               # Interruptor maestro para el aprendizaje
+      learning_rate: 0.1          # Alpha Qué tan rápido aprende el sistema (0.05 a 0.2)
+      momentum: 0.9               # Gamma <--- NUEVO
+      satisfaction_threshold: 0.7 # minimo valor de retorno para considerar el resultado positivo
+      min_value: 0.05             # manimo valor VOI que puede caer un nodo (para evitar muerte neuronal prematura)
+      max_value: 1.5              # Maximo valor VOI
+
+    # C. Impacto en Recuperación (RAG)
+    # Fórmula: Final_Score = Vector_Score * (1 + (influence_factor * VOI))
+    retrieval:
+      influence_factor: 0.5 # (Beta) Cuánto afecta el VOI al ranking vectorial
 
   # --- Modelos de IA (INDENTADO DENTRO DE CONFIG) ---
   models:
