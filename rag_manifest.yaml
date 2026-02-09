@@ -126,6 +126,13 @@ sources:
   path: data/contributions/pending_contributions.json
   # trust_level: ELIMINADO (Ahora depende de cada contribuyente individualmente)
   description: "Cola de conocimientos aportados por expertos del dominio, pendientes de validación."
+
+- id: reporte-precios-csv          # Un ID único para esta fuente
+  type: STATIC_FILE                # Define que es un archivo fijo en el repo
+  path: data/cotizacion_dolar_2017.csv        # La ruta exacta en tu GitHub
+  trust_level: 1.2                 # Nivel de confianza (afecta al VOI inicial)
+  global_concepts: ["finanzas"]    # Conceptos semilla para todos los datos del CSV
+  description: "Histórico de precios extraído de reportes internos."
 # test pre definidos
 benchmarks:
   - question: "¿Posible intervención secreta mañana en el dolar?"
